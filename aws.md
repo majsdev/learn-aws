@@ -1,6 +1,7 @@
 # AWS
 - [S3](#s3)
 - [IAM](#iam)
+- [Cognito](#cognito)
 
 # S3 
 Simiple storage service, **Object**-based storage
@@ -49,4 +50,35 @@ JSON documents *attached to IAM identities* to grant premission for accessing se
   
   A: See them as hats that you can put onto users/groups. e.g. Admin role with all permissions, guest role with read only permission, and etc.
 
+### IAM Access Keys
+Allow users to interact with AWS service programmatically via CLI or SDK
+Two access keys per user
 
+### IAM MFA
+Multi-factor authentication can be turned on per user.
+The user has to turn on MFA themselfs (because administrators have no access to users' physical deviced, but they can create policy to require MFA)
+
+# Cognito
+## What is it?
+Decentralized managed authentication
+
+- [Cognito user pools](#cognito-user-pools)
+- [Cognito identity pools](#cognito-identity-pools)
+- [Cognito sync](#cognito-sync)
+
+Web Idenity Federation: to exchange identity and security information
+between an identity provider (IdP) and an application
+
+Identity provider (IdP): a truster provider of your user identity that lets
+you use authentication to access other service
+Example identity providers: fb, amazon, google, twitter
+
+Types of IdP: OpenID connect (OIDC), SAML (for single sign on)
+
+### Cognito user pools
+user pools are user directories used to managed the action for web and
+mobile apps such as:
+- sign up
+- sign in
+- account recovery
+- account confirmation
