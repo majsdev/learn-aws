@@ -1,5 +1,6 @@
 # AWS
 - [S3](#s3)
+- [VPC](#vpc)
 - [IAM](#iam)
 - [Cognito](#cognito)
 
@@ -10,6 +11,98 @@ availability.
 - objects can be size from 0 *bytes* up to 5 terabytes
 - access control is configured using *bucket policies* and *access control
   list* (ACL), which is a legacy method (not deprecated)
+
+# VPC
+
+## What is it?
+Personal data center, gives you control over your virtual networking
+environment
+
+![VPC](./images/vpc.png)
+
+AWS has a default VPC in every region so you can immediately deploy instances, and it has the following defaults:
+- has a size /16 IPv4 CIDR block (172.31.0.0/16)
+- has a size /20 subnet in each az
+- connected to IGW
+- associated with a default NACL
+- associated with default DHCP options
+- has a main routing table
+
+## Core components
+- [Internet Gateway (IGW)](#internet-gateway)
+- Virtual Private Gateway (VPN Gateway)
+- [Route Table](#route-table)
+- Network Access Control Lists (NACL) (Stateless)
+- Security Groups (SG) (Stateful)
+- Public Subnets
+- Private Subnets
+- Nat Gateway
+- Customer Gateway
+- VPC Endpoints
+- [VPC Peering](#vpc-peering)
+
+## Key Features
+- vpcs are region specific, they do not span regions
+- user can create up to 5 vpc per region
+- every region comes with a default vpc
+- 200 subnets/vpc
+- can use IPv4 CIDR block in addition to IPv6 CIDR block (the address of the vpc)
+- cost nothing to create: vpc, route tables, NACLs, IGW, SG, subnets, vpc peering
+- cost money: NAT gateway, vpc endpoints, VPN gateway, customer gateway
+- DNS hostnames (should your instance have domain name addresses)
+
+### Internet Gateway
+Allows VPC to access internet
+
+It does two things:
+1. provides a target in vpc route table for internet-routable traffic
+    To route out to the internet, need to set destination to be 0.0.0.0/0
+2. perform network address translation for instances that have assigned public IPv4 addresses (convert from private ip to public IP)
+
+### VPC Peering
+Allows user to connect one vpc with another over a **direct network route** using private IP addresses
+
+no transitive peering (need to create direct connection between vpcs)
+
+### Route table
+Uses to direct network traffic
+Each subnet in vpc must be associated with a route table
+(one route table per subnet, but multiple subnets can use a same route table)
+
+### Bastion
+EC2 instances which are security harden. They are designed to help user to gain access to private EC2s via SSH or RCP
+
+Also known as jumpbox
+
+System Manager's Sessions Manager replaces the need for Bastions
+
+### NAT Gateway
+Intended for EC2s to gain outbound access to the internet for things such as security updates. (Cannot/should not be used as bastions)
+
+### Direct connect
+Solution for establishing dedicated network connections from on-premises locations to AWS.
+
+![Direct Connect](./images/direct-connect.png)
+
+### VPC Endpoints
+A secret tunnel where you don't have to leave the aws network
+
+Allow user to privately connect vpc to other aws services, and vpc endpoint services
+
+- eliminates the need for an IGW, NAT, VPN connection, or AWS direct connect connections
+- instances in the vpc do not require a public ip to communicate with service resources
+- traffic between your vpc and other services does not leave the aws network
+- 
+
+two types of vpc endpoints:
+1. interface endpoints
+2. gateway endpoints
+
+#### Interface Endpoints
+not free
+#### Gateway Endpoints
+free
+
 
 # IAM
 Identity access management
@@ -25,7 +118,7 @@ A management system of *users* and *resources*
 JSON documents *attached to IAM identities* to grant premission for accessing services
 - managed policies: managed by AWS, cannot be edited (labeled with organe box)
 - customer managed policies: created by customers (reusable)
-- line line policis: directly attached to the user (one-off, not reusable)
+- inline policies: directly attached to the user (one-off, not reusable)
 
 ![Sample IAM Policy](./images/sample-iam-policy.png)
 
@@ -82,3 +175,13 @@ mobile apps such as:
 - sign in
 - account recovery
 - account confirmation
+
+### Coginito identity pools
+Identity pools provide temporary AWS credentials to access services (can be
+thougtht of as the actual mechanism authorizing access to the AWS
+resources)
+
+# AWS CLI
+important flags to know
+- --profile: used to switch between aws accounts
+- --output: output format: json, table and text
