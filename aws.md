@@ -151,6 +151,8 @@ Two access keys per user
 Multi-factor authentication can be turned on per user.
 The user has to turn on MFA themselfs (because administrators have no access to users' physical device, but they can create policy to require MFA)
 
+**\* Important note**: Lock your root user and use self defined (less privileged) users to perform tasks.
+
 # Cognito
 ## What is it?
 Decentralized managed authentication
@@ -177,6 +179,22 @@ user pools are user directories used to managed the action for web and mobile ap
 Identity pools provide temporary AWS credentials to access AWS services
 
 # AWS CLI
-important flags to know
+
+~/.aws/config
+```
+[default]
+aws_access_key_id = <access key id>
+aws_secret_access_key = <secret access key>
+region = us-east-1
+```
+Command pattern
+
+    $ aws SERVICE ACTION [--PARAM VALUE_OF_PARAM]
+
+    e.g. 
+    - $ aws iam create-user -user-name johndoe
+    - $ aws s3 ls
+
+Some flags to know
 - --profile: used to switch between aws accounts
 - --output: output format: json, table and text
