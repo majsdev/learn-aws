@@ -149,7 +149,7 @@ Two access keys per user
 
 ### IAM MFA
 Multi-factor authentication can be turned on per user.
-The user has to turn on MFA themselfs (because administrators have no access to users' physical deviced, but they can create policy to require MFA)
+The user has to turn on MFA themselfs (because administrators have no access to users' physical device, but they can create policy to require MFA)
 
 # Cognito
 ## What is it?
@@ -159,27 +159,22 @@ Decentralized managed authentication
 - [Cognito identity pools](#cognito-identity-pools)
 - [Cognito sync](#cognito-sync)
 
-Web Idenity Federation: to exchange identity and security information
-between an identity provider (IdP) and an application
+Web Idenity Federation: to exchange identity and security information between an identity provider (IdP) and an application
 
-Identity provider (IdP): a truster provider of your user identity that lets
-you use authentication to access other service
+Identity provider (IdP): a truster provider of your user identity that lets you use authentication to access other service
 Example identity providers: fb, amazon, google, twitter
 
 Types of IdP: OpenID connect (OIDC), SAML (for single sign on)
 
 ### Cognito user pools
-user pools are user directories used to managed the action for web and
-mobile apps such as:
+user pools are user directories used to managed the action for web and mobile apps such as:
 - sign up
 - sign in
 - account recovery
 - account confirmation
 
 ### Coginito identity pools
-Identity pools provide temporary AWS credentials to access services (can be
-thougtht of as the actual mechanism authorizing access to the AWS
-resources)
+Identity pools provide temporary AWS credentials to access AWS services
 
 # AWS CLI
 important flags to know
