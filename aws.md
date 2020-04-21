@@ -116,9 +116,9 @@ A management system of *users* and *resources*
 
 ### IAM Policies
 JSON documents *attached to IAM identities* to grant premission for accessing services
-- managed policies: managed by AWS, cannot be edited (labeled with organe box)
-- customer managed policies: created by customers (reusable)
-- inline policies: directly attached to the user (one-off, not reusable)
+- **managed policies**: managed by AWS, cannot be edited (labeled with organe box)
+- **customer managed policies**: created by customers (reusable)
+- **inline policies**: directly attached to the user (one-off, not reusable)
 
 ![Sample IAM Policy](./images/sample-iam-policy.png)
 
@@ -134,10 +134,7 @@ JSON documents *attached to IAM identities* to grant premission for accessing se
   Group of IAM users that share permissions (admin, dev, auditors)
 
 #### IAM Roles
-  Associate permissions to a role and then assign this to users or groups or AWS resources. 
-  e.g. 
-
-  Can have multiple policies
+  Associate permissions to a role and then assign the role to users or groups or AWS resources. An IAM role an have multiple policies.
   
   Q: Why have roles when you can attach (inline) policies to users and groups?
   
