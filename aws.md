@@ -143,6 +143,16 @@ JSON documents *attached to IAM identities* to grant premission for accessing se
   
   A: See them as hats that you can put onto users/groups. e.g. Admin role with all permissions, guest role with read only permission, and etc.
 
+*Trusted entities* can assume iam roles
+
+##### Four categories of trusted entity
+1. an aws service
+1. another aws account (identified by its account id)
+1. a web identitiy authenticated using a login with amazon, amazon cognito, fb, or google
+1. SAML 2.0 federation
+
+AWS will issue a time limit security token after a trusted entity assumes its new role.
+
 ### IAM Access Keys
 Allow users to interact with AWS service programmatically via CLI or SDK
 Two access keys per user
@@ -192,7 +202,7 @@ Command pattern
     $ aws SERVICE ACTION [--PARAM VALUE_OF_PARAM]
 
     e.g. 
-    - $ aws iam create-user -user-name johndoe
+    - $ aws iam create-user --user-name johndoe
     - $ aws s3 ls
 
 Some flags to know
