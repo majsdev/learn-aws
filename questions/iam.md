@@ -38,14 +38,3 @@
     C. Incorporate encryption infrastructure into your application lifecycle.
 
     D. Deliver up-to-date credentials to authenticate RDS database requests.
-
-
-1. Which of the following is the best tool for authenticating access to a VPC-based MS Share-Point farm?
-    
-    A. Amazon Cognito
-    
-    B. AWS Directory Service for Microsoft Active Directory
-    
-    C. AWS Secrets Manager
-    
-    D. AWS Key Management Service
