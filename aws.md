@@ -205,3 +205,10 @@ Command pattern
 Some flags to know
 - --profile: used to switch between aws accounts
 - --output: output format: json, table and text
+
+
+Which of the following AWS CLI commands can tell you whether an access key is still
+being used?
+A. aws iam get-access-key-used ––access-key-id
+B. aws iam ––get-access-key-last-used access-key-id
+C. aws iam get-access-key-last-used access-last-key-id D. aws iam get-access-key-last-used ––access-key-id
