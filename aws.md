@@ -1,8 +1,67 @@
 # AWS
+five pillars of good design
+- reliability
+- performance efficiency
+- security
+- cost optimazation
+- operational excellence
+
+- [AMI](#ami)
+- [EC2](#ec2)
 - [S3](#s3)
 - [VPC](#vpc)
 - [IAM](#iam)
 - [Cognito](#cognito)
+
+# AMI
+Amazon Machine Images - template document that contains info for EC2
+
+Four kinds of AMIs
+- Amazon Quick Start AMIs
+    
+    stock AMIs supported by amazon
+
+- AWS Marketplace AMIs
+    
+    official, production ready images provided and supported by industry vendors
+
+- Community AMIs
+
+    AMIs created and maintained by independent vendors
+
+- Private AMIs
+
+    users store images created from their own deployment as private AMIs
+
+# EC2
+Instance Type Family | Types
+---------------------|--------
+General purpose | T3, T2, M5, M4
+Compute optimized | C5, C4
+Memory optimized | X1e, X1, R5, R4, z1d 
+Accelerated computing | P3, P2, G3, F1
+Storage optimized | H1, I3, D2
+
+- General Purpose
+
+    The General Purpose family includes T3, T2, M5, and M4 types, which all aim to provide a balance of compute, memory, and network resources.
+
+- Compute Optimized
+
+    For more demanding web servers and high-end machine learning workloads
+
+- Memory Optimized
+    
+    Memory Optimized instances work well for intensive database, data analysis, and caching operations. 
+
+- Accelerated Computing
+
+    Accelerated Computing instances are recommended for demanding workloads such as 3D visualizations and rendering, financial analysis, and computational fluid dynamics.
+
+- Storage Optimized
+
+    These instances work well with distributed file systems and heavyweight data processing applications.
+
 
 # S3 
 Simiple storage service, **Object**-based storage
