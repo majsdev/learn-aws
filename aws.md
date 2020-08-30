@@ -6,12 +6,15 @@ five pillars of good design
 - cost optimazation
 - operational excellence
 
+# Index
 - [AMI](#ami)
 - [EC2](#ec2)
 - [S3](#s3)
 - [VPC](#vpc)
 - [IAM](#iam)
 - [Cognito](#cognito)
+
+---
 
 # AMI
 Amazon Machine Images - template document that contains info for EC2
@@ -62,6 +65,11 @@ Storage optimized | H1, I3, D2
 
     These instances work well with distributed file systems and heavyweight data processing applications.
 
+## Tenancy
+- The default setting is `shared tenancy`, where your instance will run as a virtual machine on a physical server that’s concurrently hosting other instances. 
+- `The Dedicated Instance` option ensures that your instance will run on its own dedicated physical server.
+
+---
 
 # S3 
 Simiple storage service, **Object**-based storage
@@ -70,6 +78,8 @@ availability.
 - objects can be size from 0 *bytes* up to 5 terabytes
 - access control is configured using *bucket policies* and *access control
   list* (ACL), which is a legacy method (not deprecated)
+
+---
 
 # VPC
 
@@ -162,6 +172,7 @@ not free
 #### Gateway Endpoints
 free
 
+---
 
 # IAM
 Identity access management
@@ -243,6 +254,8 @@ user pools are user directories used to managed the action for web and mobile ap
 
 ### Coginito identity pools
 Identity pools provide temporary AWS credentials to access AWS services
+
+---
 
 # AWS CLI
 
