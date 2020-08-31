@@ -14,7 +14,6 @@ five pillars of good design
 - [IAM](#iam)
 - [Cognito](#cognito)
 
----
 
 # AMI
 Amazon Machine Images - template document that contains info for EC2
@@ -69,7 +68,15 @@ Storage optimized | H1, I3, D2
 - The default setting is `shared tenancy`, where your instance will run as a virtual machine on a physical server that’s concurrently hosting other instances. 
 - `The Dedicated Instance` option ensures that your instance will run on its own dedicated physical server.
 
----
+
+# EBS
+Elastic Block Store Volumes -- persistent storage
+
+# Instance Store Volumes
+- ephemeral storage, are SSDs physically attached to the instances and are connected via a fast NVMe interface.
+- price is included in the instance
+-  for deployment models where instances are launched to fill short-term roles (as part of autoscaling groups, for instance), import data from external sources, and are, effectively, disposable.
+
 
 # S3 
 Simiple storage service, **Object**-based storage
@@ -79,7 +86,6 @@ availability.
 - access control is configured using *bucket policies* and *access control
   list* (ACL), which is a legacy method (not deprecated)
 
----
 
 # VPC
 
@@ -172,7 +178,6 @@ not free
 #### Gateway Endpoints
 free
 
----
 
 # IAM
 Identity access management
@@ -255,7 +260,6 @@ user pools are user directories used to managed the action for web and mobile ap
 ### Coginito identity pools
 Identity pools provide temporary AWS credentials to access AWS services
 
----
 
 # AWS CLI
 
