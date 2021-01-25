@@ -64,6 +64,9 @@ Storage optimized | H1, I3, D2
 
     These instances work well with distributed file systems and heavyweight data processing applications.
 
+
+ To protect your EC2 instances from unauthorized use, AWS provides four tools: security groups, Identity and Access Management (IAM) roles, network address translation (NAT) instances, and key pairs.
+
 ## Tenancy
 - The default setting is `shared tenancy`, where your instance will run as a virtual machine on a physical server that’s concurrently hosting other instances. 
 - `The Dedicated Instance` option ensures that your instance will run on its own dedicated physical server.
@@ -283,3 +286,8 @@ Some flags to know
 - --output: output format: json, table and text
 
 
+
+# Security Groups
+by default, a security group will deny all incoming traffic
+
+An EC2 security group plays the role of a firewall.
